@@ -1,7 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AuthLayout } from './layout/AuthLayout'
+import { Login } from './pages/Login'
+import { Register } from './pages/Register'
+import { ForgotPassword } from './pages/ForgotPassword'
+import { ConfirmAccount } from './pages/ConfirmAccount'
 
 function App() {
   return (
-    <h1 className="font-bold">Hola Vite</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AuthLayout />} >
+          <Route index element={<Login />} />
+          <Route path='register' element={<Register />} />
+          <Route path='forgot-password' element={<ForgotPassword />} />
+          <Route path='confirm-account/:id' element={<ConfirmAccount />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
