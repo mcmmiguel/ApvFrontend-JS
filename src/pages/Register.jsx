@@ -9,6 +9,24 @@ export const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmarPassword, setConfirmarPassword] = useState('');
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if ([nombre, email, password, confirmarPassword].includes('')) {
+            console.log('Campos vacios');
+            return;
+        }
+
+        if (password !== confirmarPassword) {
+            console.log('No coincide el password');
+            return;
+        }
+
+        if (password.length < 6) {
+            console.log('La contraseña debe tener al menos 6 caracteres');
+        }
+    }
+
     return (
         <>
             <div>
@@ -18,7 +36,7 @@ export const Register = () => {
             </div>
 
             <div className='mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white'>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="my-5">
                         <label
                             className="uppercase text-gray-600 block text-xl font-bold">
