@@ -1,6 +1,14 @@
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
+
 export const Register = () => {
+
+    const [nombre, setNombre] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmarPassword, setConfirmarPassword] = useState('');
+
     return (
         <>
             <div>
@@ -20,6 +28,8 @@ export const Register = () => {
                             type="text"
                             placeholder="Tu nombre"
                             className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                            value={nombre}
+                            onChange={(e) => setNombre(e.target.value)}
                         />
                     </div>
 
@@ -32,6 +42,8 @@ export const Register = () => {
                             type="email"
                             placeholder="Email"
                             className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
 
@@ -44,6 +56,8 @@ export const Register = () => {
                             type="password"
                             placeholder="Password"
                             className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 
@@ -56,6 +70,8 @@ export const Register = () => {
                             type="password"
                             placeholder="Password"
                             className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                            value={confirmarPassword}
+                            onChange={(e) => setConfirmarPassword(e.target.value)}
                         />
                     </div>
 
