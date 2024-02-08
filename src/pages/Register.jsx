@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { Alerta } from "../components/Alerta";
 
 
 export const Register = () => {
@@ -8,24 +9,29 @@ export const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmarPassword, setConfirmarPassword] = useState('');
+    const [alerta, setAlerta] = useState({});
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if ([nombre, email, password, confirmarPassword].includes('')) {
-            console.log('Campos vacios');
+            setAlerta({ msg: 'Hay campos vacios', error: true });
             return;
         }
 
         if (password !== confirmarPassword) {
-            console.log('No coincide el password');
+            setAlerta({ msg: 'Las contraseñas no coinciden', error: true });
             return;
         }
 
         if (password.length < 6) {
-            console.log('La contraseña debe tener al menos 6 caracteres');
+            setAlerta({ msg: 'La contraseña debe tener al menos 6 caracteres', error: true });
         }
+
+        setAlerta({});
     }
+
+    const { msg } = alerta;
 
     return (
         <>
@@ -36,6 +42,7 @@ export const Register = () => {
             </div>
 
             <div className='mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white'>
+                {msg && <Alerta alerta={alerta} />}
                 <form onSubmit={handleSubmit}>
                     <div className="my-5">
                         <label
