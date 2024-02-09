@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 export const Login = () => {
+
+    const { auth, setAuth } = useAuth();
+
     return (
         <>
 
