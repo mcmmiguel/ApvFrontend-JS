@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Alerta } from "../components/Alerta";
-import axios from 'axios';
-
+import clienteAxios from "../config/axios";
 
 export const Register = () => {
 
@@ -33,8 +32,7 @@ export const Register = () => {
 
         // Crear el usuario en la API
         try {
-            const url = 'http://localhost:4000/api/veterinarios';
-            await axios.post(url, {
+            await clienteAxios.post('/veterinarios', {
                 nombre,
                 email,
                 password,
