@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route path='/' element={<AuthLayout />} >
           <Route index element={<Login />} />
-          <Route path='register' element={<Register />} />
-          <Route path='forgot-password' element={<ForgotPassword />} />
-          <Route path='confirm-account/:id' element={<ConfirmAccount />} />
+          <Route path='registrar' element={<Register />} />
+          <Route path='olvide-password' element={<ForgotPassword />} />
+          <Route path='confirmar/:id' element={<ConfirmAccount />} />
         </Route>
       </Routes>
     </BrowserRouter>
