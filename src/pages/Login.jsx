@@ -47,7 +47,7 @@ export const Login = () => {
                         ¿No tienes una cuenta?
                         <NavLink to="/register"> Regístrate</NavLink>
                     </p>
-                    <NavLink className='block text-center my-5 text-gray-500' to="/forgot-password">
+                    <NavLink className='block text-center my-5 text-gray-500' to="/olvide-password">
                         Olvíde mi contraseña
                     </NavLink>
                 </nav>

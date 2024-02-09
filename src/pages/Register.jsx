@@ -126,7 +126,7 @@ export const Register = () => {
                         ¿Ya tienes una cuenta?
                         <NavLink to="/"> Inicia sesión</NavLink>
                     </p>
-                    <NavLink className='block text-center my-5 text-gray-500' to="/forgot-password">
+                    <NavLink className='block text-center my-5 text-gray-500' to="/olvide-password">
                         Olvíde mi contraseña
                     </NavLink>
                 </nav>
