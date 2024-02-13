@@ -34,9 +34,10 @@ export const Formulario = () => {
     return (
         <div>
             <>
-                <p className="text-lg text-center mb-10">
-                    Añade tus pacientes y {''}
-                    <span className="text-indigo-600 font-bold">administralos</span>
+                <h2 className="font-black text-3xl text-center">Administrador de pacientes</h2>
+                <p className="text-xl mt-5 mb-10 text-center ">
+                    Añade tus pacientes {''}
+                    <span className="text-indigo-600 font-bold">y administralos</span>
                 </p>
 
                 <form
