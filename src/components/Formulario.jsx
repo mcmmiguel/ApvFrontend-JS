@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 export const Formulario = () => {
+
+    const [nombre, setNombre] = useState('');
+    const [propietario, setPropietario] = useState('');
+    const [email, setEmail] = useState('');
+    const [fecha, setFecha] = useState(Date.now());
+    const [sintomas, setSintomas] = useState('');
+
+    const [alerta, setAlerta] = useState({});
+
     return (
         <div>
             <>
@@ -9,11 +20,13 @@ export const Formulario = () => {
 
                 <form className="bg-white py-10 px-5 mb-10 lg:mb-0 shadow-md rounded-md">
                     <div className="mb-5">
-                        <label htmlFor="mascota" className="text-gray-700 uppercase font-bold">
+                        <label htmlFor="nombre" className="text-gray-700 uppercase font-bold">
                             Nombre de tu mascota
                         </label>
                         <input
-                            id="mascota"
+                            id="nombre"
+                            value={nombre}
+                            onChange={(e) => setNombre(e.target.value)}
                             placeholder="Nombre mascota"
                             type="text"
                             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
@@ -25,6 +38,8 @@ export const Formulario = () => {
                         </label>
                         <input
                             id="propietario"
+                            value={propietario}
+                            onChange={(e) => setPropietario(e.target.value)}
                             placeholder="Tu nombre"
                             type="text"
                             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
@@ -36,6 +51,8 @@ export const Formulario = () => {
                         </label>
                         <input
                             id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Tu email"
                             type="email"
                             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
@@ -47,6 +64,8 @@ export const Formulario = () => {
                         </label>
                         <input
                             id="fecha"
+                            value={fecha}
+                            onChange={(e) => setFecha(e.target.value)}
                             placeholder="Fecha de alta"
                             type="date"
                             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
@@ -58,6 +77,8 @@ export const Formulario = () => {
                         </label>
                         <textarea
                             id="sintomas"
+                            value={sintomas}
+                            onChange={(e) => setSintomas(e.target.value)}
                             placeholder="Describe los sintomas de tu mascota"
                             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         />
